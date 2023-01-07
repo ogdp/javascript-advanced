@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EX 1</title>
+  </head>
+  <body>
+    <div id="root" style="text-align: center">
+      
+    </div>
+    <script type="text/javascript">
+      const root = document.querySelector("#root");
+      const user = [
+        {
+          name: "le quang minh duc",
+          age: 20,
+          address: {
+            city: "Ha Tinh",
+            district: "Loc Ha",
+          },
+        },
+        {
+          name: "le trong dat",
+          age: 30,
+          address: {
+            city: "Ha Noi",
+            district: "",
+          },
+        },
+        {
+          name: "mai tien thanh",
+          age: 60,
+          address: {
+            city: "Lao cai",
+            district: "19 Nguyen huy tu",
+          },
+        },
+        {
+          name: "mai am nhac",
+          age: 90,
+          address: {
+            city: "Vinh",
+            district: "TP. Vinh",
+          },
+        },
+      ];
+      function run(e) {
+        let output;
+        if (Object.values(e).length === 0) {
+          root.innerHTML = " <h1>404 Not Found</h1>";
+        } else {
+          output = `
+                <div>
+                <h1>Name: <span>${e.name}</span></h1>
+                <h1>Age: <span>${e.age}</span></h1>
+                <h1>Address: <span>${e.district}, ${e.city}</span></h1>
+                </div>
+                <hr/>
+              `;
+          let div = document.createElement('div');
+          div.className = 'card';
+          div.innerHTML = output;
+          return (root.appendChild(div));
+        }
+      }
+      user.forEach((index) => {
+        let name = index.name;
+        let age = index.age;
+        let district = index.address.district;
+        let city = index.address.city;
+        console.log(
+          run({ name, age, district, city })
+        )
+      });
+    </script>
+  </body>
+</html>

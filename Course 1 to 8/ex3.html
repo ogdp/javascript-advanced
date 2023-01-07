@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EX3</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // function fruit(banana, apple){
+      //     console.log(banana, apple);
+      //     const market = `Has ${banana} banana and ${apple} apple `;
+      //     return market;
+      // }
+      // const markets = fruit(10,9);
+      // console.log(markets);
+      // let num = Number('23');
+      // console.log(num);
+
+      //   ====
+      //   function calcAge1(birthYear) {
+      //     return 2037 - birthYear;
+      //   }
+      //   // console.log(calcAge1(39));
+      //   const age1 = calcAge1(10);
+
+      //   const calcAge2 = (myBirth) => 2039 - myBirth;
+      //   // calcAge2(20);
+      //   ====
+
+      // function sinhVien(name, age){
+      //     return `Name: ${name} Age: ${age}`;
+      // }
+      // function QLSV(name, age, school){
+      //     let SV;
+      //     if(school == "FPT POLYTECHNIC") {
+      //         SV = sinhVien(name,age);
+      //         return `${school} | ${SV}`;
+      //     }else{
+      //         return 0
+      //     }
+      // }
+      // console.log(QLSV("minhduc","19","FPT POLYTECHNIC"));
+      // console.log(QLSV("dinhanh","19","FPT POLYTECHNIC"));
+      // console.log(QLSV("trongdat","19","FPT POLYTECHNIC"));
+      // =====
+
+      // const fr1 = "John";
+      // const fr2 = "Mark";
+      // const fr3 = "Johnnbidern";
+
+      // const fr = [fr1 , fr2, fr3];
+      // const objfr = {fr1 , fr2, fr3};
+      // // Check lenght arr
+      // console.log(fr.length);
+      // // last element
+      // console.log(fr);
+      // console.log(fr[fr.length - 1]);
+      // // Check lenght obj
+      // console.log(Object.values(objfr).length);
+
+      // =====
+
+      // const friends = ['minhduc' , "hoai"];
+      // // them phan tu vao mang
+      // friends.push("duc");
+      // // xoa phan thu dau tien
+      // friends.unshift("minh");
+      // console.log(friends);
+      // const eLast = friends.pop();
+      // // hien thi phan tu vua bi xoa
+      // console.log(eLast);
+      // console.log(friends);
+      // // thu tu phan tu trong mang
+      // console.log(friends.indexOf("hoai"));
+      // console.log(friends);
+      // // kiểm tra phần tử có tồn tại trong mảng trả về true , false , đúng kiểu dữ liệu
+      // friends.push(23);
+      // console.log(friends.includes("hoai")); //true
+      // console.log(friends.includes("hoai2")); //false
+      // console.log(friends.includes("23")); //false
+      // =====
+
+      // const calcTip = function(bill){
+      //     return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.3
+      // }
+      // const bills = [125, 555, 44];
+      // const tip = [
+      //     calcTip(bills[0]),
+      //     calcTip(bills[1]),
+      //     calcTip(bills[2])
+      // ]
+      // const totals = [
+      //     bills[0] + tip[0],
+      //     bills[1] + tip[1],
+      //     bills[2] + tip[2]
+      // ]
+      // console.log(bills, tip , totals);
+      // console.log(calcTip(500));
+      // ====
+
+      // const jonasArray = [
+      //     'Jonas',
+      //     'Schmedtmann',
+      //     2037-1991,
+      //     'teacher',
+      //     ['Michael', 'Petter', 'Steven']
+      // ]
+      // const jonas = {
+      //     firstName: 'Jonas',
+      //     lastName: 'Schmedtmann',
+      //     age: 2037-1991,
+      //     job: 'teacher',
+      //     address: {
+      //         city: 'Ha Tinh',
+      //         district: 'Loc Ha'
+      //     },
+      //     friends: ['Michael', 'Petter', 'Steven']
+      // }
+
+      // // const {firstName , lastName, age, job, address : {city, district}} = jonas;
+      // // console.log(district , city);
+      // // console.log(jonas);
+
+      // const interestedIn = prompt("Bạn muốn biết thông tin nào về Jonas? Lựa chọn : firstName, lastName,age, job, city, district, friends");
+      // console.log(jonas[interestedIn]);
+
+      // ====
+
+      //   const jonas = {
+      //     firstName: "Jonas",
+      //     lastName: "Schmedtmann",
+      //     birthYear: 2003,
+      //     job: "teacher",
+      //     address: {
+      //       city: "Ha Tinh",
+      //       district: "Loc Ha",
+      //     },
+      //     friends: ["Michael", "Petter", "Steven"],
+      //     hasDriverLiscense: true,
+      //     // calcAge: function (){
+      //     //     // console.log(this);
+      //     //     return 2037 - this.birthYear;
+      //     // }
+      //     calcAge: function () {
+      //       this.age = 2037 - this.birthYear;
+      //       return this.age;
+      //     },
+      //     getSummary: function () {
+      //       return `${this.lastName} ${this.firstName} from ${
+      //         this.address.district
+      //       }, ${this.address.city} age: ${this.age} and he has ${
+      //         this.hasDriverLiscense ? "a" : "no"
+      //       } driver license`;
+      //     },
+      //   };
+      // // Phải chạy func trước rồi mới có thể lấy biến ra;
+      //   console.log(jonas.calcAge());
+      //   console.log(jonas.age);
+      //   console.log(jonas.getSummary());
+
+      // console.log(jonas.calcAge(jonas.birthYear));
+      // console.log(jonas)
+
+      // ======
+
+      //       const mark = {
+      //         fullName: "Mark Miller",
+      //         mass: 78,
+      //         height: 1.69,
+      //         calcBMI: function () {
+      //           this.BMI = this.mass / this.height ** 2;
+      //           return this.BMI;
+      //         },
+      //       };
+
+      //       const john = {
+      //         fullName: "John Smith",
+      //         mass: 92,
+      //         height: 1.95,
+      //         calcBMI: function () {
+      //           this.BMI = this.mass / this.height ** 2;
+      //           return this.BMI;
+      //         },
+      //       };
+      //       // Phải chạy func trước rồi mới có thể lấy biến ra;
+      //       mark.calcBMI();
+      //       john.calcBMI();
+      //       console.log(mark.BMI, john.BMI);
+
+      //       if (mark.BMI > john.BMI) {
+      //         const bmiThan = mark.BMI - john.BMI;
+      //         console.log(
+      //           `${mark.fullName} is BMI(${mark.BMI}) than ${john.fullName} is BMI(${john.BMI}) : ${bmiThan}`
+      //         );
+      //       }
+
+      // // =====
+
+      //   for (let i = 1; i <= 10; i++) {
+      //     console.log(`Lifting weight repetition ${i}  🚀`);
+      //   }
+
+      // =====
+
+      //   const jonasArray = [
+      //     "Jonas",
+      //     "Schmedtmann",
+      //     2037 - 1991,
+      //     "teacher",
+      //     ["Michael", "Petter", "Steven"],
+      //     true,
+      //   ];
+      //   const types = [];
+      //   for (let i = 0; i < jonasArray.length; i++) {
+      //     console.log(jonasArray[i], ">>>", typeof jonasArray[i]);
+      //     // Thêm value mảng này sang mảng khác
+      //     // types[i] = typeof jonasArray[i];
+      //     types.push(typeof jonasArray[i]);
+      //   }
+      //   //   console.log(types);
+
+      //   // continue and break
+      //   console.log("---ONLY STRING---");
+      //   for (let i = 0; i < jonasArray.length; i++) {
+      //     // console.log(typeof jonasArray[i] !== "number");
+      //     if (typeof jonasArray[i] !== "number") continue;
+      //     console.log(jonasArray[i], typeof jonasArray[i]);
+      //   }
+      //   //   Continue if(true) nó sẽ không chạy tiếp những câu lệnh ở dưới Continue trong func
+      //   // Nó vẫn tiếp tục chạy vòng lặp cho đến khi thoả mãn điều kiện vòng lặp, Ngược lại
+
+      //   for (let i = 0; i < jonasArray.length; i++) {
+      //     console.log(jonasArray[i], typeof jonasArray[i]);
+      //     console.log(typeof jonasArray[i] !== "number");
+      //     if (typeof jonasArray[i] !== "number") break;
+      //   }
+      //   //   Break nếu điều kiện trong if(true) nó sẽ dừng không chạy lại vòng lặp for 1 lần nào nữa
+
+      // =====
+
+      //   const jonasArray = [
+      //     "Jonas",
+      //     "Schmedtmann",
+      //     2037 - 1991,
+      //     "teacher",
+      //     ["Michael", "Petter", "Steven"],
+      //   ];
+      //   //Lấy giá trị ngược lại trong arr
+
+      //   for (let i = jonasArray.length - 1; i >= 0; i--) {
+      //     console.log(jonasArray[i]);
+      //   }
+
+      // =====
+      //   WHILE
+      //    Random
+      //   let rep = Math.trunc(Math.random() * 200 + 1);
+      //   console.log(rep);
+
+      //   ===== Final
+      const calcTip = function (bill) {
+        return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+      };
+      const bills = [22, 239, 334, 55, 44, 66, 354, 654, 789, 222];
+      const tips = [];
+      const totals = [];
+
+      for (let i = 0; i < bills.length; i++) {
+        const tip = calcTip(bills[i]);
+        tips.push(tip);
+        totals.push(bills[i] + tip);
+      }
+      console.log(bills, tips, totals);
+      const calcAverage = function (arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+          sum += arr[i];
+        }
+        const avg = sum / arr.length;
+        return `Average: ${avg}`;
+      };
+      console.log(calcAverage(bills), calcAverage(tips), calcAverage(totals));
+    </script>
+  </body>
+</html>
