@@ -6,7 +6,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EX4</title>
   </head>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      width: 100%;
+      min-height: 100vh;
+      background: rgb(69, 134, 11);
+      background: linear-gradient(
+        344deg,
+        rgb(78, 160, 6) 0%,
+        rgba(26, 180, 74, 1) 35%,
+        rgba(38, 255, 0, 0.4663573085846868) 100%
+      );
+      background-repeat: no-repeat;
+    }
+  </style>
   <body>
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+      /*
+      // #> 59:
+      // MAX MIN
+      // const temperatures = [45, -2, -6, 441, "error", true, 17, 15, 14, 9, 50];
+      // const calcTempAmplitude = function (temps) {
+      //   let max = temps[0];
+      //   let min = temps[0];
+      //   for (let i = 0; i < temps.length; i++) {
+      //     let curTemp = temps[i];
+      //     if (typeof curTemp !== "number") continue;
+      //     if (temps[i] > max) max = temps[i];
+      //     if (temps[i] < min) min = temps[i];
+      //   }
+      //   console.log(max);
+      //   console.log(min);
+      // };
+      // calcTempAmplitude(temperatures);
+      // MERGE 2 ARR
+      const calcTempAmplitudeNew = function (ar1, ar2) {
+        // const array1 = ["a", "b", "c"];
+        // const array2 = ["d", "e", "f"];
+        // const array3 = array1.concat(array2);
+        // const array3 = [...array1, ...array2];
+        // console.log(array3);
+        const temps = ar1.concat(ar2);
+        console.log(temps);
+        for (let i = 0; i < temps.length; i++) {
+          let curTemp = temps[i];
+          if (typeof curTemp !== "number") continue;
+          // console.log("is Number >> ", temps[i]);
+          max = typeof max !== "number" ? curTemp : max;
+          min = typeof min !== "number" ? curTemp : min;
+          if (temps[i] > max) max = temps[i];
+          if (temps[i] < min) min = temps[i];
+        }
+        console.log(max);
+        console.log(min);
+      };
+      calcTempAmplitudeNew(["a", "b", "c", 22, 4], ["d", "e", "f", 10, 5, 8]);
+      // _END_
+      */
+      //  #> 61
+
+      // const measereKelvin = function () {
+      //   const meansurement = {
+      //     type: "temp",
+      //     unit: "celsius",
+      //     value: Number(prompt("Degrees celsius")),
+      //   };
+      //   console.table(meansurement);
+      //   const kelvin = meansurement.value + 273;
+      //   return kelvin;
+      // };
+      // console.log(measereKelvin());
+
+      // // <<<<<<<__END__>>>>>>>
+
+      // #> 62
+      const data1 = [17, 21, 23];
+      const data2 = [12, 5, -5, 0, 4];
+
+      // console.log(`... ${data1[0]}°C ... ${data1[1]}°C ... ${data1[2]}°C `);
+
+      const printForecast = function (arr) {
+        let forecast = "";
+        for (let i = 0; i < arr.length; i++) {
+          forecast += `Day ${i + 1} ${data1[i]}°C \n`;
+        }
+        console.log(forecast);
+      };
+      printForecast(data1);
+      // <<<<<<<__END__>>>>>>>
+    </script>
   </body>
 </html>
