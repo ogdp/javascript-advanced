@@ -15,29 +15,29 @@ const score = {
   player2: 0,
   current1: 0,
   current2: 0,
+  namePlayer1: "PLAYER 1",
+  namePlayer2: "PLAYER 2",
 };
 $(".rollDice").onclick = () => {
   if (numClick >= 3) {
-    score.player1 = score.current1;
-    score.player2 = score.current2;
     getScore();
     defaultDisplay();
     numClick = 0;
     win();
+    numCurent = 0;
+    $(".numCurrent.active").innerHTML = numCurent;
   } else {
     let i = Math.trunc(Math.random() * 6 + 1);
     $(".img").src = `./images/${arrImg[i - 1]}`;
     if ($(".numCurrent.active").classList[1] == "left") {
-      score.current1 = parseInt($(".numCurrent.active").textContent);
-      numCurent = parseInt($(".numCurrent.active").textContent) + i;
-      $(".numCurrent.active").innerHTML = numCurent;
+      numCurent += i;
       score.current1 = numCurent;
+      $(".numCurrent.active").innerHTML = numCurent;
       setCountAround(0);
     } else {
-      score.current2 = parseInt($(".numCurrent.active").textContent);
-      numCurent = parseInt($(".numCurrent.active").textContent) + i;
-      $(".numCurrent.active").innerHTML = numCurent;
+      numCurent += i;
       score.current2 = numCurent;
+      $(".numCurrent.active").innerHTML = numCurent;
       setCountAround(1);
     }
     ++numClick;
@@ -50,16 +50,33 @@ $(".closeTab").onclick = () => {
 };
 $(".hold").onclick = () => {
   getScore();
-  defaultDisplay();
+  let win1 = 0;
+  let cc8 = 0;
+  for (let i = 0; i < $$(".score").length; i++) {
+    if (parseInt($$(".score")[i].textContent) >= 30) {
+      win1++;
+      cc8 = i;
+    }
+  }
+  if (win1 == 0) {
+    defaultDisplay();
+  } else {
+    $$(".player")[cc8].classList.add("win");
+  }
+  numCurent = 0;
   numClick = 0;
+  win();
 };
 function getScore() {
-  score.player1 = score.current1;
-  score.player2 = score.current2;
+  score.player1 = score.player1 + score.current1;
+  score.current1 = 0;
+  score.player2 = score.player2 + score.current2;
+  score.current2 = 0;
   $(".score.player1").innerHTML = score.player1;
   $(".score.player2").innerHTML = score.player2;
 }
 $(".newGame").onclick = () => {
+  $(".player").classList.remove("win");
   disableBtn(1);
   $(".img").src = ``;
   $(".player.left").classList.add("active");
@@ -93,6 +110,8 @@ $(".newGame").onclick = () => {
   }
 };
 function defaultDisplay() {
+  numCurent = 0;
+  $(".numCurrent.active").innerHTML = numCurent;
   if ($(".player.left.active")) {
     $(".player.right").classList.add("active");
     $(".player.left").classList.remove("active");
@@ -106,12 +125,18 @@ function defaultDisplay() {
   }
 }
 function win() {
-  if (score.current1 >= 30 || score.current2 >= 30) {
-    if (score.current1 > score.current2) {
-      $(".scoreWin").textContent = score.current1;
+  if (score.player1 >= 30 || score.player2 >= 30) {
+    if (score.player1 > score.player2) {
+      $(".scoreWin").textContent = score.player1;
+      $(
+        ".nameUserWin"
+      ).textContent = `💥"${score.namePlayer1}" dành chiến thắng 💯`;
       $(".notification").classList.add("active");
     } else {
-      $(".scoreWin").textContent = score.current2;
+      $(".scoreWin").textContent = score.player2;
+      $(
+        ".nameUserWin"
+      ).textContent = `💥"${score.namePlayer2}" dành chiến thắng 💯`;
       $(".notification").classList.add("active");
     }
   }
@@ -167,6 +192,11 @@ $$(".name").forEach((element) => {
           if (nameUser.length >= 3) {
             nameUser = nameUser.replace("  ", "");
             element.innerHTML = nameUser.slice(0, 16);
+            if (element.textContent == "PLAYER 1") {
+              score.namePlayer1 = nameUser.slice(0, 16);
+            } else {
+              score.namePlayer2 = nameUser.slice(0, 16);
+            }
           }
         }
       }

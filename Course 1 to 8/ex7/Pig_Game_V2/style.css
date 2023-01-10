@@ -50,6 +50,12 @@ section.right {
   opacity: 1;
   background-color: rgba(255, 255, 255, 0.86);
 }
+.player.win {
+  background-color: rgb(24 1 1);
+}
+.player.win .name {
+  color: #b1022ead;
+}
 .name {
   font-weight: 600;
   font-size: 2.2rem;
@@ -84,15 +90,16 @@ section.right {
   color: rgb(233, 229, 229);
 }
 .btn {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 0.6);
   border-radius: 30px;
-  padding: 12px 30px;
+  padding: 11px 22px;
   position: absolute;
   border: none;
   cursor: pointer;
   transition: all 0.25s;
-  color: rgb(85, 85, 85);
+  color: rgb(44, 44, 44);
   font-weight: 500;
+  border: 1px solid rgba(160, 160, 160, 0.562);
 }
 .btn.disable {
   opacity: 0.2;
