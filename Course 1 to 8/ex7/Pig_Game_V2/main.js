@@ -53,7 +53,7 @@ $(".hold").onclick = () => {
   let win1 = 0;
   let cc8 = 0;
   for (let i = 0; i < $$(".score").length; i++) {
-    if (parseInt($$(".score")[i].textContent) >= 30) {
+    if (parseInt($$(".score")[i].textContent) >= 100) {
       win1++;
       cc8 = i;
     }
@@ -76,7 +76,8 @@ function getScore() {
   $(".score.player2").innerHTML = score.player2;
 }
 $(".newGame").onclick = () => {
-  $(".player").classList.remove("win");
+  $$(".player")[0].classList.remove("win");
+  $$(".player")[1].classList.remove("win");
   disableBtn(1);
   $(".img").src = ``;
   $(".player.left").classList.add("active");
@@ -125,7 +126,7 @@ function defaultDisplay() {
   }
 }
 function win() {
-  if (score.player1 >= 30 || score.player2 >= 30) {
+  if (score.player1 >= 100 || score.player2 >= 100) {
     if (score.player1 > score.player2) {
       $(".scoreWin").textContent = score.player1;
       $(
