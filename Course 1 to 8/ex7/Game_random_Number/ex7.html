@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess My Number</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-size: 18px;
+      font-family: "Press Start 2P", cursive;
+    }
+    section {
+      color: rgb(240, 240, 240);
+      padding-top: 50px;
+      text-align: center;
+      width: 100%;
+      min-height: 100vh;
+      background-color: rgb(29, 29, 29);
+    }
+    h1 {
+      font-size: 28px;
+    }
+    h4 {
+      font-size: 18px;
+    }
+    h3 {
+      font-size: 24px;
+    }
+    .mtb {
+      margin: 20px 0px;
+    }
+    #check {
+      padding: 4px 15px;
+      font-size: 23px;
+    }
+  </style>
+  <body>
+    <section>
+      <h1 class="mtb">Guess My Number</h1>
+      <h4 class="mtb">(Between 1 and 20)</h4>
+      <h3 class="mtb">
+        Number happy:
+        <span
+          style="
+            font-size: 24px;
+            background-color: rgb(11, 207, 43);
+            padding: 5px;
+          "
+          id="randomNumber"
+          >?</span
+        >
+      </h3>
+      <h3 id="thongBao" style="font-size: 20px">Start Guessing ...</h3>
+      <input
+        max="20"
+        min="1"
+        class="mtb"
+        style="
+          font-size: 20px;
+          padding: 15px 10px;
+          background-color: rgba(255, 222, 173, 0);
+          border: 2px solid rgb(216, 216, 216);
+          color: white;
+          width: 150px;
+          text-align: center;
+        "
+        type="number"
+        id="inputNumber"
+      />
+      <br />
+      <button
+        class="mtb"
+        style="padding: 15px 20px; cursor: pointer"
+        id="check"
+      >
+        Check!
+      </button>
+      <h3>
+        Score:
+        <span id="Score" style="font-size: 24px">20</span>
+      </h3>
+      <h3 class="mtb">
+        Hightscore:
+        <span id="hightScore" style="font-size: 24px">0</span>
+      </h3>
+      <h3 class="mtb" id="checkLoss"></h3>
+    </section>
+    <script type="text/javascript" src="ex7.js"></script>
+  </body>
+</html>
