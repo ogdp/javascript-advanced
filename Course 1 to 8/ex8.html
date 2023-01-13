@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // const a = 10;
+      // first(a);
+      // function first(a) {
+      //   const b = 9;
+      //   second(a, b);
+      //   function second(a, b) {
+      //     const c = 8;
+      //     third(a, b, c);
+      //   }
+      // }
+      // function third(a, b, c) {
+      //   const d = 7;
+      //   console.log(d + c + b + a);
+      // }
+      // // #> 97:
+      // const calcAge = function (birthYear) {
+      //   // console.log(2037 - birthYear);
+      //   // console.log(this);
+      // };
+      // calcAge(2003);
+      // const calcAgeArrow = (birthYear) => {
+      //   // console.log(2037 - birthYear);
+      //   // console.log(this);
+      // };
+      // calcAgeArrow(2003);
+      // const jonas = {
+      //   year: 1991,
+      //   // Khởi tạo giá trị age trong func
+      //   calcAge: function (yearUser) {
+      //     // console.log(this);
+      //     this.ageNow = yearUser - this.year;
+      //     return this.ageNow;
+      //   },
+      // };
+      // // Chạy func trong obj
+      // // Console.log ra giá trị đã được khởi tạo
+      // // console.log(jonas.ageNow);
+
+      // // Giải nén giá trị trong Obj
+      // // const { year, ageNow } = jonas;
+      // // console.log("Value after extract : " + year + " AgeNow : " + ageNow);
+      // // List age
+      // const matilda = {
+      //   year: 2011,
+      // };
+      // jonas.calcAge(matilda.year);
+      // const { year, ageNow } = jonas;
+      // console.log("Value after extract : " + year + " AgeNow : " + ageNow);
+      // // <<<<<<<__END__>>>>>>>
+      // #> 98
+      // var firstName = "Matilda";
+      /* const jonas = {
+        firstName: "Jonas",
+        year: 1991,
+        calcAge: function () {
+          // console.log(this.firstName);
+          console.log(2037 - this.year);
+          // Sulution 1
+          // const self = this;
+          // console.log(self);
+          // const isMillenial = function () {
+          //   console.log(self);
+          //   console.log(self.year >= 1981 && self.year <= 1996);
+          // };
+          // isMillenial();
+          // Sulution 2
+          const isMillenial = () => {
+            console.log(this);
+            console.log(this.year >= 1981 && this.year <= 1996);
+          };
+          isMillenial();
+        },
+        great: () => {
+          console.log(this), console.log(`Hey >> ${this.firstName}`);
+        },
+      };
+      jonas.great();
+      jonas.calcAge(); */
+
+      // note: Tính chất arow func trong Obj:
+      // + Chỉ có thể truyền đối số ở ngoài Object
+      // + Không thể gọi this + giá trị của từng biến trong Obj
+      // + Biến var sử dụng như một biến Global nó không bị mất giá trị với loại khối khi được tham chiếm , Biến let và const thì đéo
+      // + Đối với func thường trong Obj -> This sẽ lấy mọi giá trị nằm ngoài khối của nó vì thế phải khai báo biến mới = this rồi gán biến mới thay cho this (Sulution 1)
+      // + Đối với arrow func trong Obj -> Mặc định this sẽ tự nhận mọi giá trị nằm ngoài khối nó không cần khai báo biến trung gian (Sulution 2)
+
+      // arguments keywords
+      /*const addExpr = function (a, b) {
+        console.log(arguments);
+        return a + b;
+      };
+      addExpr(2, 5);
+      addExpr(2, 5, 8, 12);
+      // Argument not working in Arrow Func
+      // const addArrow = (a, b) => {
+      //   console.log(arguments);
+      // };
+      // addArrow(2, 3, 5, 6);
+      // note: Arguments là như một phương thức để hiển thị giá trị được truyền vào
+      // <<<<<<<__END__>>>>>>> */
+      // #> 99
+      let age = 30;
+      let oldAge = age;
+      age = 31;
+      console.log(age); // 31
+      console.log(oldAge); // 30
+
+      const me = {
+        name: "Jonas",
+        age: 30,
+      };
+      const friend = me;
+      friend.age = 27;
+      console.log("Friend : ", friend); // Bằng me và age = 27
+      console.log("Me : ", me); // Age vẫn bằng friend
+      // note:
+      // + Khai báo  Obj mới = Obj cũ
+      // + Khi chúng ta gán giá trị ở Obj mới thì giá trị được cập nhật y hết ở Obj cũ
+      // Vì nó cùng trỏ đến 1 địa chỉ bộ nhớ máy tính nên việc thay đổi giá trị ở 1 trong 2 obj thì giá trị địa chỉ sẽ thay đổi
+
+      // Shawllow Copy
+
+      // Deep Coppy
+
+      // <<<<<<<__END__>>>>>>>
+    </script>
+  </body>
+</html>
