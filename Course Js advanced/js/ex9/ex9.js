@@ -54,7 +54,7 @@ const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r);
 */
 
-// #> 104
+/*// #> 104
 const restaurant = {
   name: "Le Quang Minh Duc",
   location: "Loc Ha - Ha Tinh",
@@ -120,3 +120,89 @@ const {
   fri: { open: o, close: c },
 } = openingHours;
 console.log(o, c); // 11 23
+*/
+
+/* // #> 105 : The Spread Operator
+
+const restaurant = {
+  name: "Le Quang Minh Duc",
+  location: "Loc Ha - Ha Tinh",
+  categories: ["Piza", "Mỳ Cay", "Trà Sữa"],
+  starterMenu: ["Gà quay", "Lợn Quay", "Dog Quay"],
+  mainMenu: ["Pizza", "Pasta", "Risoto"],
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, //open 24 hours
+      close: 24,
+    },
+  },
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+  orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
+    console.log(
+      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
+  },
+  oderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
+  },
+};
+
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+
+// Copy array
+const mainMenuCopy = [...arr];
+
+// Join 2 arrays
+const menu = [...arr, ...badNewArr];
+console.log(menu);
+
+// Interables: arrays, strings, maps, sets, NOT objects
+const str = "Jonas";
+// Cắt chia nhỏ từng phần tử trong chuỗi gán vào mảng letters mới
+const letters = [...str];
+console.log(letters);
+// Cắt nhỏ xuất ra dạng chuỗi từng ký tự có khoảng cách
+console.log(...str);
+// const ingredients = [
+//   prompt("Let's make pasta ! Ingredient 1?"),
+//   prompt("Let's make pasta ! Ingredient 2?"),
+//   prompt("Let's make pasta ! Ingredient 3?"),
+// ];
+// // C1
+// restaurant.oderPasta(ingredients[0], ingredients[1], ingredients[2]);
+// // C2
+// restaurant.oderPasta(...ingredients);
+// // console.log(ingredients);
+
+// Objects
+const newRestaurant = {
+  founderIn: 1998,
+  ...restaurant,
+  founder: "Minh Duc",
+};
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+// Thay đổi tên ở ObjCopy thì Obj Gốc k thay đổi
+restaurantCopy.name = "Ristorante Roma";
+
+console.log(restaurantCopy);
+console.log(restaurant);
+// <<<<<<<__END__>>>>>>> */
+
+// #> 106 Rest Pattern and Parameters
